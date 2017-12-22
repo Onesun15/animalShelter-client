@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../config';
+import { REACT_APP_API_BASE_URL } from '../config';
 
 //------------------------------------------------------Dog------------------------------------------------------
 
@@ -21,7 +21,7 @@ const fetchDogError = error => ({
 
 export const fetchDog = () => dispatch => {
   dispatch(fetchDogRequest());
-  fetch(`${API_BASE_URL}/dog`)
+  fetch(`${REACT_APP_API_BASE_URL}/dog`)
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
@@ -36,7 +36,7 @@ export const adoptDog = () => dispatch => {
   console.log('adopt dog');
   dispatch(adoptDogRequest());
 
-  fetch(`${API_BASE_URL}/dog`, { method: 'DELETE' })
+  fetch(`${REACT_APP_API_BASE_URL}/dog`, { method: 'DELETE' })
     .then(res => {
       if (!res.ok) {
         console.log('error adopting dog');
@@ -88,7 +88,7 @@ const fetchCatError = error => ({
 
 export const fetchCat = () => dispatch => {
   dispatch(fetchCatRequest());
-  fetch(`${API_BASE_URL}/cat`)
+  fetch(`${REACT_APP_API_BASE_URL}/cat`)
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
@@ -103,7 +103,7 @@ export const adoptCat = () => dispatch => {
   console.log('adopt cat');
   dispatch(adoptCatRequest());
 
-  fetch(`${API_BASE_URL}/cat`, { method: 'DELETE' })
+  fetch(`${REACT_APP_API_BASE_URL}/cat`, { method: 'DELETE' })
     .then(res => {
       if (!res.ok) {
         console.log('error adopting cat');

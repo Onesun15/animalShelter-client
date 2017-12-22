@@ -3,6 +3,13 @@ import React from 'react';
 export default function Pet(props) {
   console.log(props);
   const { name, imageURL, imageDescription, breed, sex, age, story } = props;
+  if (props.loading) {
+    return (
+      <section>
+        <h2>Loading...</h2>
+      </section>
+    );
+  }
   return (
     <section className="dogToAdopt-section">
       <header>
